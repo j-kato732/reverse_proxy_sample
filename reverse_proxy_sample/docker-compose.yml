@@ -1,0 +1,16 @@
+version: '3'
+services:
+  haproxy:
+    build: reverse_proxy
+    ports:
+    - "8080:8080"
+
+  server1:
+    build: web_server1
+    tty: true
+    stdin_open: true
+
+  server2:
+    build: web_server2
+    tty: true
+    stdin_open: true
